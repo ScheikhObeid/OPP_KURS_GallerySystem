@@ -59,11 +59,17 @@
 
 
     echo "<br><br>";
-    echo "- Get user information by <b>Auto Instantation with loop</b>." . "<br>";
+    echo "- Get users information by <b>Auto Instantation with loop</b>." . "<br>";
     $users_by_loop= User::find_all_users_2();
     foreach($users_by_loop as $user){
     echo " * " . $user->username . "<br>";
     }
+
+    echo "<br><br>";
+    echo "- Get users information by <b>Auto Instantation with loop and id</b>." . "<br>";
+    $found_user = User::find_users_by_id_2(2);
+   
+    echo " * " . $found_user->username;
     
     ?>
 

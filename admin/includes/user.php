@@ -29,6 +29,20 @@ public static function find_users_by_id($user_id){
     return $found_user;
     }
 
+    public static function find_users_by_id_2($user_id){
+        global $database;
+        $the_result_array = self::find_this_query_2("SELECT * FROM users WHERE id=$user_id");
+        return !empty($the_result_array) ? array_shift($the_result_array) : false;
+   
+    // if(!empty($the_result_array)){
+    // $first_item = array_shift($the_result_array);
+    // return $first_item;
+    // }else{
+    //     return false;
+    // }
+        
+    }
+
 public static function find_this_query($sql){
     global $database;
     $result_set = $database->query($sql);
